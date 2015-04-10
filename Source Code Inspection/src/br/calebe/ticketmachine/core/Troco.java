@@ -9,6 +9,8 @@ import java.util.Iterator;
 class Troco {
 
     protected PapelMoeda[] papeisMoeda;
+    private int[] NotasValidas = {2, 5, 10, 20, 50, 100};
+    private int troco;
 
     public Troco(int valor) {
         papeisMoeda = new PapelMoeda[6];
@@ -46,6 +48,10 @@ class Troco {
 
     public Iterator<PapelMoeda> getIterator() {
         return new TrocoIterator(this);
+    }
+
+    void calculaNotas() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     class TrocoIterator implements Iterator<PapelMoeda> {
