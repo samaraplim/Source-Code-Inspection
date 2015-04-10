@@ -10,12 +10,13 @@ import java.util.Iterator;
  */
 public class TicketMachine {
 
-    protected int valor;
+    protected int valorDoBilhete;
     protected int saldo;
     protected int[] papelMoeda = {2, 5, 10, 20, 50, 100};
+    protected Troco troco;
 
     public TicketMachine(int valor) {
-        this.valor = valor;
+        this.valorDoBilhete = valor;
         this.saldo = 0;
     }
 
