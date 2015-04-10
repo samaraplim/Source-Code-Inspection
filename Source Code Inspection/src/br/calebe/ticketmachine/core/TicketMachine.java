@@ -42,7 +42,7 @@ public class TicketMachine {
 
     public Troco getTroco() {
        troco = new Troco(saldo);
-        troco.calculaNotas();
+        troco.calculaTroco();
         return troco;
     }
 
