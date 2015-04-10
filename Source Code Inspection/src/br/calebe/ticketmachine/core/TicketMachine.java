@@ -20,19 +20,19 @@ public class TicketMachine {
         this.saldo = 0;
     }
 
-    public void inserir(int quantiaInserida) throws PapelMoedaInvalidaException {
+    public void inserir(PapelMoeda quantiaInserida) throws PapelMoedaInvalidaException {
         boolean achou = false;
         for (int i = 0; i < papelMoeda.length && !achou; i++) {
-            if (papelMoeda[1] == quantiaInserida) {
+            if (papelMoeda[i] == quantiaInserida.getValor()) {
                 achou = true;
             }
         }
-        if (!achou) {
+        if (achou == false) {
             throw new PapelMoedaInvalidaException("Nota Inválida");
         }
         else{
         
-        this.saldo += quantiaInserida;
+        this.saldo += quantiaInserida.getValor() * quantiaInserida.getQuantidade();
         }
     }    
 
@@ -40,13 +40,14 @@ public class TicketMachine {
         return this.saldo;
     }
 
-    public void getTroco() {
+    public Troco getTroco() {
        troco = new Troco(saldo);
         troco.calculaTroco();
         PapelMoeda[] papeisMoedaTroco = troco.getPapapeisMoeda();
         for (int i = 0; i < papeisMoedaTroco.length - 1 && papeisMoedaTroco[i] != null; i++) {
             System.out.println(papeisMoedaTroco[i].getQuantidade() + " nota(s) de " + papeisMoedaTroco[i].getValor());
         }
+        return troco;
     }
 
     public void imprimir() throws SaldoInsuficienteException {
