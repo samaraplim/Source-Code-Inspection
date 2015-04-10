@@ -30,9 +30,11 @@ public class TicketMachine {
         if (!achou) {
             throw new PapelMoedaInvalidaException("Nota Inválida");
         }
+        else{
         
-        this.saldo += quantia;
-    }
+        this.saldo += quantiaInserida;
+        }
+    }    
 
     public int getSaldo() {
         return saldo;
