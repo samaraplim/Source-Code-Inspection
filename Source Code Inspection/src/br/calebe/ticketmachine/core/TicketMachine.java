@@ -55,6 +55,13 @@ public class TicketMachine {
             throw new SaldoInsuficienteException("Não é possivel efetuar a compra, saldo insuficiente");
         }
         String result = "*****************\n";
+        
+        result += "*** Bilhete comprado com sucesso!*** \n";
+        result += "*** Valor do bilhete : R$ " + valorDoBilhete + ",00 ****\n\n";
+        
+         this.saldo = this.saldo - this.valorDoBilhete;
+        
+        result += "***  Seu saldo é : ****\n";
         result += "*** R$ " + saldo + ",00 ****\n";
         result += "*****************\n";
         
