@@ -20,16 +20,17 @@ public class TicketMachine {
         this.saldo = 0;
     }
 
-    public void inserir(int quantia) throws PapelMoedaInvalidaException {
+    public void inserir(int quantiaInserida) throws PapelMoedaInvalidaException {
         boolean achou = false;
         for (int i = 0; i < papelMoeda.length && !achou; i++) {
-            if (papelMoeda[1] == quantia) {
+            if (papelMoeda[1] == quantiaInserida) {
                 achou = true;
             }
         }
         if (!achou) {
-            throw new PapelMoedaInvalidaException();
+            throw new PapelMoedaInvalidaException("Nota Inválida");
         }
+        
         this.saldo += quantia;
     }
 
