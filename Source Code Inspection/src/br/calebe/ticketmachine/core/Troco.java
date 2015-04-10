@@ -37,5 +37,12 @@ class Troco {
 
     }
 
+    public PapelMoeda[] getPapapeisMoeda() {
+        return papeisMoeda;
+    }
+
+    public int getValorTroco() {
+        return troco;
+    }
    
 }
