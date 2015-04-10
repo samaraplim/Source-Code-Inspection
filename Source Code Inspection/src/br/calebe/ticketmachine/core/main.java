@@ -19,7 +19,7 @@ public class main {
         TicketMachine tm = new TicketMachine(5);
 
         // inserir 100,00
-        tm.inserir(new PapelMoeda(100,1));
+        tm.inserir(new PapelMoeda(20,1));
        
 
         //impressao do saldo na tela (e supostamente do bilhete)
