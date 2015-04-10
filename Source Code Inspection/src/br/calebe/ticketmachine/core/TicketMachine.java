@@ -48,13 +48,14 @@ public class TicketMachine {
 
     public void imprimir() throws SaldoInsuficienteException {
         if (saldo < valorDoBilhete) {
-            throw new SaldoInsuficienteException();
+            throw new SaldoInsuficienteException("Não é possivel efetuar a compra, saldo insuficiente");
         }
         String result = "*****************\n";
         result += "*** R$ " + saldo + ",00 ****\n";
         result += "*****************\n";
         
         this.saldo = this.saldo - this.valorDoBilhete;
+        
         System.out.println( result);
     }
 }
