@@ -7,6 +7,6 @@ package br.calebe.ticketmachine.exception;
 public class SaldoInsuficienteException extends Exception {
 
     public SaldoInsuficienteException(String não_é_possivel_efetuar_a_compra_saldo_ins) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    super(não_é_possivel_efetuar_a_compra_saldo_ins);  
     }
 }
