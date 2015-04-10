@@ -41,8 +41,8 @@ class Troco {
         return papeisMoeda;
     }
 
-    public int getValorTroco() {
-        return troco;
+    public void getValorTroco() {
+        System.out.println("O valor do troco é: " + this.troco);
     }
    
 }
