@@ -9,7 +9,7 @@ import java.util.Iterator;
 class Troco {
 
     protected PapelMoeda[] papeisMoeda;
-    private int[] NotasValidas = {2, 5, 10, 20, 50, 100};
+    private int[] notasValidas = {2, 5, 10, 20, 50, 100};
     private int troco;
 
     public Troco(int valor) {
@@ -18,43 +18,24 @@ class Troco {
     }
        
 
-    void calculaNotas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    void calculaTroco() {
+        int valor = this.troco;
+        int qtde = 0;
+
+        int cont = 0;
+        int i = notasValidas.length - 1;
+        while (valor != 0) {
+            qtde = valor / notasValidas[i];
+
+            if (qtde != 0) {
+                valor = valor % notasValidas[i];
+                papeisMoeda[cont] = new PapelMoeda(notasValidas[i], qtde);
+                cont++;
+            }
+            i = i - 1;
+        }
+
     }
 
-    class TrocoIterator implements Iterator<PapelMoeda> {
-
-        protected Troco troco;
-
-        public TrocoIterator(Troco troco) {
-            this.troco = troco;
-        }
-
-        @Override
-        public boolean hasNext() {
-            for (int i = 6; i >= 0; i++) {
-                if (troco.papeisMoeda[i] != null) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        @Override
-        public PapelMoeda next() {
-            PapelMoeda ret = null;
-            for (int i = 6; i >= 0 && ret != null; i++) {
-                if (troco.papeisMoeda[i] != null) {
-                    ret = troco.papeisMoeda[i];
-                    troco.papeisMoeda[i] = null;
-                }
-            }
-            return ret;
-        }
-
-        @Override
-        public void remove() {
-            next();
-        }
-    }
+   
 }
