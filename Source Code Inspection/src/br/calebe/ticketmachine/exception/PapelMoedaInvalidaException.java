@@ -7,7 +7,8 @@ package br.calebe.ticketmachine.exception;
 public class PapelMoedaInvalidaException extends Exception {
 
     public PapelMoedaInvalidaException(String nota_Inválida) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         
+        super(nota_Inválida); 
     }
     
 }
