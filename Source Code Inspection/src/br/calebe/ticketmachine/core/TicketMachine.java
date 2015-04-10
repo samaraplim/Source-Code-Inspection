@@ -40,10 +40,13 @@ public class TicketMachine {
         return this.saldo;
     }
 
-    public Troco getTroco() {
+    public void getTroco() {
        troco = new Troco(saldo);
         troco.calculaTroco();
-        return troco;
+        PapelMoeda[] papeisMoedaTroco = troco.getPapapeisMoeda();
+        for (int i = 0; i < papeisMoedaTroco.length - 1 && papeisMoedaTroco[i] != null; i++) {
+            System.out.println(papeisMoedaTroco[i].getQuantidade() + " nota(s) de " + papeisMoedaTroco[i].getValor());
+        }
     }
 
     public void imprimir() throws SaldoInsuficienteException {
